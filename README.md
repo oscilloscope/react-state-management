@@ -1,8 +1,3 @@
-# Simple react state management project - Without Redux
+# Simple react state management project
 
-To start project run the following commands
-
-```
-npm install
-npm start
-```
+Simple react state management project without Redux, Flux or any other state management libraries.
