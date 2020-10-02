@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Footer from './Footer';
 import Header from './Header';
@@ -8,7 +8,15 @@ import Detail from './Detail';
 import Cart from './Cart';
 
 export default function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(() => {
+    try {
+      return JSON.parse(localStorage.getItem('cart')) ?? [];
+    } catch {
+      return [];
+    }
+  });
+
+  useEffect(() => localStorage.setItem('cart', JSON.stringify(cart)), [cart]);
 
   function addToCart(id, sku) {
     setCart((items) => {
