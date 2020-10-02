@@ -25,6 +25,6 @@ export default function useFetch(url) {
     }
     init();
   }, [url]);
-
+  debugger;
   return { data, error, loading };
 }
